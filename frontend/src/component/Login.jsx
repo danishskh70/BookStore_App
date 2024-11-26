@@ -16,13 +16,12 @@ const Login = () => {
     };
 
     try {
-      const res = await axios.post("http://localhost:4000/user/login", userInfo);
+      const res = await axios.post("http://localhost:5000/user/login", userInfo);
       toast.success('Login Successfully!');
       if (res.data.user) {
         document.getElementById("my_modal_3").close();
       setTimeout(() => {
         localStorage.setItem("Users", JSON.stringify(res.data.user));
-      
       window.location.reload();
       }, 2000);
     

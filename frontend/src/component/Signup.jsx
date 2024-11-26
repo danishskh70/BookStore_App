@@ -22,11 +22,14 @@ const Signup = () => {
     };
 
     try {
-      const res = await axios.post("http://localhost:4000/user/signup", userInfo);
+      const res = await axios.post("http://localhost:5000/user/signup", userInfo);
       
       if (res.data.user) {
-        toast.success(res.data.message)
+        setTimeout(() => {
+          toast.success(res.data.message)
         localStorage.setItem("Users", JSON.stringify(res.data.user));
+        window.location.reload();
+        }, 1000);
         navigate(from,{replace:true})
       }
     } catch (err) {

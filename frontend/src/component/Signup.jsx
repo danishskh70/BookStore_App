@@ -22,7 +22,7 @@ const Signup = () => {
     };
 
     try {
-      const res = await axios.post("http://localhost:5000/user/signup", userInfo);
+      const res = await axios.post("https://bookstore-app-61ty.onrender.com/user/signup", userInfo);
       
       if (res.data.user) {
         setTimeout(() => {

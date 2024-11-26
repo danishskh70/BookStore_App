@@ -6,7 +6,7 @@ const Contacts = () => {
   return (
     <>
      <Navbar/>
-      <div className="min-h-screen">
+      <div>
       <Contact/>
       </div> 
       <Footer/> 
